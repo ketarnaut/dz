@@ -1,0 +1,50 @@
+<meta charset="utf-8">
+<script>
+
+//     const goodsCount = 0;
+//
+//     if (goodsCount > 0) {
+//         console.log (`Количество товаров: ${goodsCount}`);
+//     } else {
+//         console.log(`В корзине нет товаров`);
+//     }
+//
+// //тернарный оператор только для совсе простой операции можно
+//     goodsCount > 0
+//         ? console.log (`Количество товаров: ${goodsCount}`)
+//         : console.log(`В корзине нет товаров`);
+// const goodsCount = 5;
+//     console.log(goodsCount > 0 ? `Количество товаров: ${goodsCount}` : `В корзине нет товаров`);
+
+    // const good = 'Сливы';
+    //
+    // if (good === 'Бананы') {
+    //     console.log('Бананы стоят 50 рублей');
+    // } else if (good === 'Апельсины' || good ==='Яблоки') {
+    //    console.log('Апельсины и яблоки стоят 50 рублей');
+    // } else if (good === 'Манго') {
+    //     console.log('Манго стоят 500 рублей');
+    // } else {
+    //     console.log('Фрукт не найден');
+    // }
+
+    const good = 'Сливы';
+
+    switch (good) {
+        case 'Бананы':
+            console.log('Цена на бананы 60 руб./кг.');
+            break;
+        case 'Манго':
+            console.log('Цена на манго 500 руб./кг.');
+            break;
+        case 'Апельсины':
+            console.log('Цена на апельсины 50 руб./кг.');
+            break;
+        case 'Яблоки':
+            console.log('Цена на яблоки 50 руб./кг.');
+            break;
+        default:
+            console.log('Фрукт не найден');
+    }
+
+</script>
