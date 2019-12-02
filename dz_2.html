@@ -1,147 +1,187 @@
 <meta charset="utf-8">
 <script>
-    // /**
-    //  * задание 1
-    //  */
-    //     var a = 1, b = 1, c, d;
-    //     c = ++a;
-    //     alert(c);
-    //     // 2 сначала a увеличили, а потом присвоили c
-    //
-    //     d = b++;
-    //     alert(d);
-    //     // 1 сначала d присвоили b, а потом b увеличили
-    //
-    //     c = (2+ ++a); alert(c);
-    //     // 5 сначала а увеличиваем на единицу = 3, 2+3 = 5
-    //
-    //     d = (2+ b++); alert(d);
-    //     // 4 сделали все действия в скобках, потом приравняли к d
-    //
-    //     alert(a);
-    //     // 3
-    //
-    //     alert(b);
-    //     // 3
-    //
-    // /**
-    //  * задание 2
-    //  */
-    //     var a1 = 2;
-    //     var x = 1 + (a1 *= 2);
-    //     alert(x);
-    //     //5 т.к. a1= 2*2 = 4, 1+4 = 5
-    //
-    // /**
-    //  * задание 3
-    //  */
-    //     let f = parseInt(prompt('Введите любое целое'));
-    //     let g = parseInt(prompt('И ещё одно'));
-    //     let h;
-    //
-    //     if (f >= 0 && g >= 0) {
-    //         h = f - g;
-    //         alert(`${f} - ${g} = ${h}`);
-    //     }
-    //
-    //     if (f < 0 && g < 0) {
-    //         h = f * g;
-    //         alert(`${f} * ${g} = ${h}`);
-    //     }
-    //
-    //     if ((f >= 0 && g < 0) || (f < 0 && g >= 0)) {
-    //         h = f + g;
-    //         alert(`${f} + ${g} = ${h}`);
-    //     }
+    /**
+     * задание 1
+     */
+        var a = 1, b = 1, c, d;
+        c = ++a;
+        alert(c);
+        // 2 сначала a увеличили, а потом присвоили c
 
-    // /**
-    //  * задание 4 не вышло, не опнимаю, почему не заходит в case
-    //  */
-    // let i =  Math.floor(Math.random() * 16 + 1);
-    // switch (i) {
-    //         case '1':
-    //             console.log('1');
-    //             break;
-    //         case '2':
-    //             console.log('1 2');
-    //             break;
-    //         case '3':
-    //             console.log('1 2 3');
-    //             break;
-    //         case '4':
-    //             console.log('1 2 3 4');
-    //             break;
-    //         case '5':
-    //             console.log('1 2 3 4 5');
-    //             break;
-    //         case '6':
-    //             console.log('1 2 3 4 5 6');
-    //             break;
-    //         case '7':
-    //             console.log('1 2 3 4 5 6 7');
-    //             break;
-    //         case '8':
-    //             console.log('1 2 3 4 5 6 7 8');
-    //             break;
-    //         case '9':
-    //             console.log('1 2 3 4 5 6 7 8 9');
-    //             break;
-    //         case '10':
-    //             console.log('1 2 3 4 5 6 7 8 9 10');
-    //             break;
-    //         case '11':
-    //             console.log('1 2 3 4 5 6 7 8 9 10 11');
-    //             break;
-    //         case '12':
-    //             console.log('1 2 3 4 5 6 7 8 9 10 11 12');
-    //             break;
-    //         case '13':
-    //             console.log('1 2 3 4 5 6 7 8 9 10 11 12 13');
-    //             break;
-    //         case '14':
-    //             console.log('1 2 3 4 5 6 7 8 9 10 11 12 13 14');
-    //             break;
-    //         case '15':
-    //             console.log('1 2 3 4 5 6 7 8 9 10 11 12 13 14 15');
-    //             break;
-    //         case '16':
-    //             console.log('1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16');
-    //             break;
-    //     }
-    // /**
-    //  * задание 5
-    //  */
-    // // let var1, var2, var3;
-    //
-    // function sum(var1, var2) {
-    //     let var3 = var1 + var2;
-    //     return alert(`${var1} + ${var2} = ${var3}`);
-    // }
-    //
-    // function diff(var1, var2) {
-    //     let var3 = var1 - var2;
-    //     return alert(`${var1} - ${var2} = ${var3}`);
-    // }
-    //
-    // function multipl(var1, var2) {
-    //     let var3 = var1 * var2;
-    //     return alert(`${var1} * ${var2} = ${var3}`);
-    // }
-    //
-    // function division(var1, var2) {
-    //     let var3 = var1 * var2;
-    //     return alert(`${var1} * ${var2} = ${var3}`);
-    // }
-    //
-    // sum(5, 7);
-    // diff(2, 4);
-    // multipl(6, 8);
-    // division(-5, 10);
+        d = b++;
+        alert(d);
+        // 1 сначала d присвоили b, а потом b увеличили
+
+        c = (2+ ++a); alert(c);
+        // 5 сначала а увеличиваем на единицу = 3, 2+3 = 5
+
+        d = (2+ b++); alert(d);
+        // 4 сделали все действия в скобках, потом приравняли к d
+
+        alert(a);
+        // 3
+
+        alert(b);
+        // 3
+
+    /**
+     * задание 2
+     */
+        var a1 = 2;
+        var x = 1 + (a1 *= 2);
+        alert(x);
+        //5 т.к. a1= 2*2 = 4, 1+4 = 5
+
+    /**
+     * задание 3
+     */
+        let f = parseInt(prompt('Введите любое целое'));
+        let g = parseInt(prompt('И ещё одно'));
+        let h;
+
+        if (f >= 0 && g >= 0) {
+            h = f - g;
+            alert(`${f} - ${g} = ${h}`);
+        }
+
+        if (f < 0 && g < 0) {
+            h = f * g;
+            alert(`${f} * ${g} = ${h}`);
+        }
+
+        if ((f >= 0 && g < 0) || (f < 0 && g >= 0)) {
+            h = f + g;
+            alert(`${f} + ${g} = ${h}`);
+        }
+
+    /**
+     * задание 4
+     */
+    let i =  Math.floor(Math.random() * 16 + 1);
+
+    switch (i) {
+            case 1:
+                console.log('1');
+                break;
+            case 2:
+                console.log('1 2');
+                break;
+            case 3:
+                console.log('1 2 3');
+                break;
+            case 4:
+                console.log('1 2 3 4');
+                break;
+            case 5:
+                console.log('1 2 3 4 5');
+                break;
+            case 6:
+                console.log('1 2 3 4 5 6');
+                break;
+            case 7:
+                console.log('1 2 3 4 5 6 7');
+                break;
+            case 8:
+                console.log('1 2 3 4 5 6 7 8');
+                break;
+            case 9:
+                console.log('1 2 3 4 5 6 7 8 9');
+                break;
+            case 10:
+                console.log('1 2 3 4 5 6 7 8 9 10');
+                break;
+            case 11:
+                console.log('1 2 3 4 5 6 7 8 9 10 11');
+                break;
+            case 12:
+                console.log('1 2 3 4 5 6 7 8 9 10 11 12');
+                break;
+            case 13:
+                console.log('1 2 3 4 5 6 7 8 9 10 11 12 13');
+                break;
+            case 14:
+                console.log('1 2 3 4 5 6 7 8 9 10 11 12 13 14');
+                break;
+            case 15:
+                console.log('1 2 3 4 5 6 7 8 9 10 11 12 13 14 15');
+                break;
+            case 16:
+                console.log('1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16');
+                break;
+        }
+    /**
+     * задание 5
+     */
+    // let var1, var2, var3;
+
+    function sum(var1, var2) {
+        let var3 = var1 + var2;
+        return alert(`${var1} + ${var2} = ${var3}`);
+    }
+
+    function diff(var1, var2) {
+        let var3 = var1 - var2;
+        return alert(`${var1} - ${var2} = ${var3}`);
+    }
+
+    function multipl(var1, var2) {
+        let var3 = var1 * var2;
+        return alert(`${var1} * ${var2} = ${var3}`);
+    }
+
+    function division(var1, var2) {
+        let var3 = var1 * var2;
+        return alert(`${var1} * ${var2} = ${var3}`);
+    }
+
+    sum(5, 7);
+    diff(2, 4);
+    multipl(6, 8);
+    division(-5, 10);
 
     /**
      * задание 6
      */
 
+    mathOperation(1, 2, 'sum');
+    mathOperation(3, 2, 'diff');
+    mathOperation(1, -1, 'multipl');
+    mathOperation(5, 2, 'division');
 
+
+
+    function mathOperation(arg1, arg2, operation) {
+        let total;
+        switch (operation) {
+            case 'sum':
+                total = arg1 + arg2;
+                alert(total);
+                break;
+            case 'diff':
+                total = arg1 - arg2;
+                alert(total);
+                break;
+            case 'multipl':
+                total = arg1 / arg2;
+                alert(total);
+                break;
+            case 'division':
+                total = arg1 * arg2;
+                alert(total);
+                break;
+        }
+    }
+
+    /**
+     * задание 8
+     */
+    function power(val, pow) {
+    if (pow === 1) {
+        return val;
+    } else {
+        return val * power(val, pow - 1);
+    }
+    }
+alert(power(3, 3));
 
 </script>
