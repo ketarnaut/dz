@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Шахматы</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        tr {
+            width: 20px;
+            height: 20px;
+        }
+        td {
+            border: 1px solid #888888;
+            width: 20px;
+            height: 20px;
+            background-color: #EEEEEE;
+        }
+    </style>
+</head>
+
+<body>
+<table id="game"></table>
+<script>
+   const chess = {
+       rowsCount: 10,
+       colsCount: 10,
+       cellElements: null,
+       cellColor: '#AA3333',
+       gameContainerEl: document.getElementById('game'),
+       arrNumber: ["", 8, 7, 6, 5, 4, 3, 2, 1, ""],
+       arrLetter: ["", 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', ""],
+       figures: [
+           { figure: "♖", positionCol: 1, positionRow: 1},
+           { figure: "♘", positionCol: 2, positionRow: 1},
+           { figure: "♗", positionCol: 3, positionRow: 1},
+           { figure: "♕", positionCol: 4, positionRow: 1},
+           { figure: "♔", positionCol: 5, positionRow: 1},
+           { figure: "♗", positionCol: 6, positionRow: 1},
+           { figure: "♘", positionCol: 7, positionRow: 1},
+           { figure: "♖", positionCol: 8, positionRow: 1},
+
+           { figure: "♙", positionCol: 1, positionRow: 2},
+           { figure: "♙", positionCol: 2, positionRow: 2},
+           { figure: "♙", positionCol: 3, positionRow: 2},
+           { figure: "♙", positionCol: 4, positionRow: 2},
+           { figure: "♙", positionCol: 5, positionRow: 2},
+           { figure: "♙", positionCol: 6, positionRow: 2},
+           { figure: "♙", positionCol: 7, positionRow: 2},
+           { figure: "♙", positionCol: 8, positionRow: 2},
+
+           { figure: "♜", positionCol: 1, positionRow: 8},
+           { figure: "♞", positionCol: 2, positionRow: 8},
+           { figure: "♝", positionCol: 3, positionRow: 8},
+           { figure: "♛", positionCol: 4, positionRow: 8},
+           { figure: "♚", positionCol: 5, positionRow: 8},
+           { figure: "♝", positionCol: 6, positionRow: 8},
+           { figure: "♞", positionCol: 7, positionRow: 8},
+           { figure: "♜", positionCol: 8, positionRow: 8},
+
+           { figure: "♟", positionCol: 1, positionRow: 7},
+           { figure: "♟", positionCol: 2, positionRow: 7},
+           { figure: "♟", positionCol: 3, positionRow: 7},
+           { figure: "♟", positionCol: 4, positionRow: 7},
+           { figure: "♟", positionCol: 5, positionRow: 7},
+           { figure: "♟", positionCol: 6, positionRow: 7},
+           { figure: "♟", positionCol: 7, positionRow: 7},
+           { figure: "♟", positionCol: 8, positionRow: 7},
+       ],
+       
+       renderMap() {
+           this.cellElements = [];
+            // Пробегаемся в цикле столько раз, какое количество строк в игре.
+            for (let row = 0; row < this.rowsCount; row++) {
+              // Создаем новую строку.
+              const trElem = document.createElement('tr');
+              // Добавляем строку в контейнер с игрой.
+              this.gameContainerEl.appendChild(trElem);
+              // В каждой строке пробегаемся по циклу столько раз, сколько у нас колонок.
+
+              for (let col = 0; col < this.colsCount; col++) {
+                // Создаем ячейку.
+                const cell = document.createElement('td');
+                // Записываем ячейку в массив ячеек.
+                this.cellElements.push(cell);
+                // Добавляем ячейку в текущую строку.
+                trElem.appendChild(cell);
+
+                this.getFigures(row,col,cell);
+                }
+            }
+        },
+
+       //раскрашиваем ячейки и добавляем обозначения на доску
+       getFigures(row,col,cell) {
+
+           for (let i = 0; i < this.cellElements.length; i++) {
+               if (row === 0 || row === this.rowsCount - 1) {
+                   for (let j = 0; j < this.arrLetter.length; j++) {
+                       if (col === j) {
+                           cell.innerText = this.arrLetter[j];
+                       }
+                   }
+               } else if (col === 0 || col === this.colsCount - 1) {
+                   for (let j = 0; j < this.arrNumber.length; j++) {
+                       if (row === j) {
+                           cell.innerText = this.arrNumber[j];
+                       }
+                   }
+               } else if ((col % 2 === 0 && row % 2 === 1) || (col % 2 === 1 && row % 2 === 0)) {
+                   cell.style.backgroundColor = this.cellColor;
+               }
+           }
+
+           for (let i = 0; i < this.figures.length; i++) {
+
+               if ((col === this.figures[i].positionCol) && (row === this.figures[i].positionRow)) {
+                   cell.innerText = this.figures[i].figure;
+
+               }
+
+           }
+           //выравниваем текст в ячйках
+           cell.style.textAlign = "center";
+       },
+
+   }
+
+
+
+    
+   chess.renderMap();
+
+</script>
+</body>
+</html>
